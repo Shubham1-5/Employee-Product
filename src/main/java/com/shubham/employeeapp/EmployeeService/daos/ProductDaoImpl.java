@@ -18,12 +18,12 @@ public class ProductDaoImpl implements ProductDao{
     @PostConstruct
     private void fillProducts(){
         productData.put(1, new Product(11, "Kitkat", 20));
-        productData.put(1, new Product(12, "Dairy Milk", 80));
-        productData.put(1, new Product(13, "Munch", 10));
-        productData.put(1, new Product(14, "Bournville", 100));
-        productData.put(1, new Product(15, "Snickers", 40));
-        productData.put(1, new Product(16, "Ferrero Rocher", 250));
-        productData.put(1, new Product(17, "Nutella", 100));
+        productData.put(2, new Product(12, "Dairy Milk", 80));
+        productData.put(3, new Product(13, "Munch", 10));
+        productData.put(4, new Product(14, "Bournville", 100));
+        productData.put(5, new Product(15, "Snickers", 40));
+        productData.put(6, new Product(16, "Ferrero Rocher", 250));
+        productData.put(7, new Product(17, "Nutella", 100));
     }
 
     @Override

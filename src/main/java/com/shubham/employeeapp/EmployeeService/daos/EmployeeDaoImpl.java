@@ -18,12 +18,12 @@ public class EmployeeDaoImpl implements EmployeeDao{
     @PostConstruct
     private void fillUsers(){
         employeeData.put(1, new Employee(1, "Ram", "Manager"));
-        employeeData.put(1, new Employee(2, "Mohan", "Engineer"));
-        employeeData.put(1, new Employee(3, "Shyam", "Developer"));
-        employeeData.put(1, new Employee(4, "James", "QA"));
-        employeeData.put(1, new Employee(5, "Ali", "Auditor"));
-        employeeData.put(1, new Employee(6, "Sunny", "CEO"));
-        employeeData.put(1, new Employee(7, "John", "CFO"));
+        employeeData.put(2, new Employee(2, "Mohan", "Engineer"));
+        employeeData.put(3, new Employee(3, "Shyam", "Developer"));
+        employeeData.put(4, new Employee(4, "James", "QA"));
+        employeeData.put(5, new Employee(5, "Ali", "Auditor"));
+        employeeData.put(6, new Employee(6, "Sunny", "CEO"));
+        employeeData.put(7, new Employee(7, "John", "CFO"));
     }
 
     @Override

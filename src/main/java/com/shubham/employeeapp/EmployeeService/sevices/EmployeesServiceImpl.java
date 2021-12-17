@@ -3,9 +3,11 @@ package com.shubham.employeeapp.EmployeeService.sevices;
 import com.shubham.employeeapp.EmployeeService.daos.EmployeeDao;
 import com.shubham.employeeapp.EmployeeService.entities.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class EmployeesServiceImpl implements EmployeesService {
 
     @Autowired
