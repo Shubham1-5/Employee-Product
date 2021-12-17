@@ -21,7 +21,7 @@ Employee and Product service record  using Spring Boot and H2 along with REST AP
 - Clone this repository and then refresh maven
 - Start the server
 
-## API calls working
+## API calls
 
 - localhost:8080/products/{id}
 - localhost:8080/employees/{id}
