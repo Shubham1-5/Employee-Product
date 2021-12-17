@@ -23,8 +23,8 @@ Employee and Product service record  using Spring Boot and H2 along with REST AP
 
 ## API calls working
 
-localhost:8080/products/{id}
-localhost:8080/employees/{id}
+- localhost:8080/products/{id}
+- localhost:8080/employees/{id}
 
 ## Requirement
 
