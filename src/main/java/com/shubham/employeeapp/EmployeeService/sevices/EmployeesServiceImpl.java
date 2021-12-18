@@ -15,12 +15,20 @@ public class EmployeesServiceImpl implements EmployeesService {
 
     @Override
     public Employee getEmployeeById(int employeeId) {
+
+        /**
+         * Business logic is taking time
+         */
         try{
             //Simulate backend service by forcing thread to sleep
             Thread.sleep(1000*7);
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        /**
+         * DB is not taking time
+         */
         return employeeDao.getEmployeeDetails(employeeId);
     }
 
