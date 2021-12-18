@@ -1,5 +1,6 @@
 package com.shubham.employeeapp.EmployeeService.controllers;
 
+import com.shubham.employeeapp.EmployeeService.cachestores.CacheStore;
 import com.shubham.employeeapp.EmployeeService.entities.Employee;
 import com.shubham.employeeapp.EmployeeService.entities.Product;
 import com.shubham.employeeapp.EmployeeService.sevices.EmployeesService;
@@ -20,6 +21,9 @@ public class EmployeeController {
     @Autowired
     private ProductService productService;
 
+    @Autowired
+    private CacheStore<Employee> employeeCache;
+
     /**
      * since service is taking time, so first time call the service for id and cache it locally
      * next time return the cached result for the same id
@@ -31,9 +35,20 @@ public class EmployeeController {
 
         /**
          * caching logic with guava cache
+         *
+         * First check in the cache
          */
 
+        Employee cachedEmployee = employeeCache.get(id);
+        if(cachedEmployee != null){
+            return new ResponseEntity(cachedEmployee, HttpStatus.OK);
+        }
+
         Employee savedEmployee = employeesService.getEmployeeById(id);
+
+        // Add in the cache
+        employeeCache.add(id, savedEmployee);
+
         return new ResponseEntity(savedEmployee, HttpStatus.OK);
     }
 
