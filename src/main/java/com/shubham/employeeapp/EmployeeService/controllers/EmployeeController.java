@@ -24,9 +24,13 @@ public class EmployeeController {
     @Autowired
     private CacheStore<Employee> employeeCache;
 
+    @Autowired
+    private CacheStore<Product> productCache;
+
     /**
      * since service is taking time, so first time call the service for id and cache it locally
      * next time return the cached result for the same id
+     *
      * @param id
      * @return
      */
@@ -40,7 +44,7 @@ public class EmployeeController {
          */
 
         Employee cachedEmployee = employeeCache.get(id);
-        if(cachedEmployee != null){
+        if (cachedEmployee != null) {
             return new ResponseEntity(cachedEmployee, HttpStatus.OK);
         }
 
@@ -59,7 +63,15 @@ public class EmployeeController {
          * caching logic with guava cache
          */
 
+        Product cachedProduct = productCache.get(id);
+        if (cachedProduct != null) {
+            return new ResponseEntity(cachedProduct, HttpStatus.OK);
+        }
+
         Product savedProduct = productService.getProductById(id);
+
+        // Add in the cache
+        productCache.add(id, savedProduct);
         return new ResponseEntity(savedProduct.getName(), HttpStatus.OK);
     }
 }
