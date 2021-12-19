@@ -26,3 +26,15 @@ Employee and Product service record  using Spring Boot and internal mock DB alon
 ## Requirement
 
 To optimize time for each API call irrespective of it's id. ( Note : Intentionally API calls are made to response after 7 secs and 5 secs at service layer for both Employee and Product respectively )
+
+## Demo Result
+
+<div style='width: 130px; text-align: center;'>First time uncached result</div>
+<br>
+<img src = "/src/main/resources/Achieved Result/First time.png">
+<br>
+<br>
+
+<div style='width: 130px; text-align: center;'>Second time cached result</div>
+<br>
+<img src = "/src/main/resources/Achieved Result/Second time.png">
